@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
 import ProductDetail from "./pages/ProductDetail";
@@ -37,6 +38,7 @@ function App() {
         <Route path="/forum/new" element={<NewQuestionPage />} />
 
         <Route path="/profile" element={<ProfilePage />}>
+          <Route index element={<Navigate to="dashboard" replace />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="appointments" element={<Appointments />} />
           <Route path="wallet" element={<Wallet />} />
